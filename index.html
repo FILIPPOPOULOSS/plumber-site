@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Θωμάς Νικολόπουλος - Υδραυλικός, Θερμουδραυλικός και Ψυκτικός. Εξυπηρέτηση σε Αλεξάνδρεια, Θεσσαλονίκη και Βέροια. Καλέστε στο 6986616992." />
+  <title>Θωμάς Νικολόπουλος | Υδραυλικός - Θερμουδραυλικός - Ψυκτικός</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f6f8fb;
+      color: #172033;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: #071525;
+      color: #dbeafe;
+      padding: 9px 8%;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .top-bar strong {
+      color: #facc15;
+    }
+
+    header {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+
+    .logo strong {
+      color: #0f4c81;
+      font-size: 23px;
+      letter-spacing: 0.2px;
+    }
+
+    .logo span {
+      color: #64748b;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #172033;
+      margin-left: 26px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.25s;
+    }
+
+    nav a:hover {
+      color: #0f4c81;
+    }
+
+    .nav-call {
+      background: #0f4c81;
+      color: white !important;
+      padding: 11px 18px;
+      border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(15, 76, 129, 0.25);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      background:
+        linear-gradient(110deg, rgba(7, 21, 37, 0.92), rgba(15, 76, 129, 0.78)),
+        url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1800&q=85');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 80px 8%;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: rgba(250, 204, 21, 0.12);
+      right: -110px;
+      bottom: -140px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(250, 204, 21, 0.95);
+      color: #111827;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      margin-bottom: 22px;
+      box-shadow: 0 10px 24px rgba(250, 204, 21, 0.2);
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h2 {
+      font-size: clamp(22px, 3vw, 31px);
+      color: #dbeafe;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      max-width: 690px;
+      font-size: 20px;
+      color: #edf6ff;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 24px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: #facc15;
+      color: #111827;
+      box-shadow: 0 14px 28px rgba(250, 204, 21, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #fde047;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.14);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #0f4c81;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(140px, 1fr));
+      gap: 14px;
+      margin-top: 45px;
+      max-width: 730px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 18px;
+      padding: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 27px;
+      color: #facc15;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+
+    section {
+      padding: 85px 8%;
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .section-title .mini {
+      color: #0f4c81;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(31px, 4vw, 44px);
+      color: #071525;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      letter-spacing: -0.8px;
+    }
+
+    .section-title p {
+      color: #64748b;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      padding: 32px;
+      border-radius: 22px;
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+      transition: 0.25s;
+      border: 1px solid #e5edf5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #0f4c81, #38bdf8, #facc15);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 55px rgba(15, 23, 42, 0.12);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: #e0f2fe;
+      color: #0f4c81;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      color: #071525;
+      margin-bottom: 11px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #64748b;
+    }
+
+    .premium-section {
+      background: #071525;
+      color: white;
+    }
+
+    .premium-section .section-title h2,
+    .premium-section .section-title p {
+      color: white;
+    }
+
+    .premium-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .premium-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 27px;
+    }
+
+    .premium-box span {
+      font-size: 34px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .premium-box h3 {
+      margin-bottom: 8px;
+      color: #facc15;
+    }
+
+    .premium-box p {
+      color: #cbd5e1;
+    }
+
+    .areas {
+      background: linear-gradient(180deg, #f6f8fb, #eaf2f8);
+      text-align: center;
+    }
+
+    .area-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .area-list span {
+      background: white;
+      color: #0f4c81;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-weight: 900;
+      box-shadow: 0 12px 25px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5edf5;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #0f4c81, #071525);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      background: rgba(250, 204, 21, 0.12);
+      border-radius: 50%;
+      left: -130px;
+      top: -130px;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      color: #dbeafe;
+      font-size: 19px;
+      margin-bottom: 28px;
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp {
+      background: #22c55e;
+      color: white;
+      box-shadow: 0 14px 28px rgba(34, 197, 94, 0.22);
+    }
+
+    footer {
+      background: #050b14;
+      color: #cbd5e1;
+      padding: 28px 8%;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .floating-call {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 50;
+      background: #facc15;
+      color: #111827;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.28);
+      transition: 0.25s;
+    }
+
+    .floating-call:hover {
+      transform: scale(1.08);
+    }
+
+    @media (max-width: 850px) {
+      header {
+        align-items: flex-start;
+        gap: 16px;
+        flex-direction: column;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      nav a {
+        margin-left: 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 70px 8%;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .top-bar {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-call {
+        display: none;
+      }
+
+      .buttons .btn,
+      .contact-actions .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      header,
+      .top-bar,
+      .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <span>Υδραυλικές • Θερμουδραυλικές • Ψυκτικές εργασίες</span>
+    <span>Άμεση επικοινωνία: <strong>6986616992</strong></span>
+  </div>
+
+  <header>
+    <div class="logo">
+      <strong>Θωμάς Νικολόπουλος</strong>
+      <span>Υδραυλικός - Θερμουδραυλικός - Ψυκτικός</span>
+    </div>
+    <nav>
+      <a href="#services">Υπηρεσίες</a>
+      <a href="#why">Πλεονεκτήματα</a>
+      <a href="#areas">Περιοχές</a>
+      <a class="nav-call" href="tel:+306986616992">Καλέστε τώρα</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">✓ Άμεση & αξιόπιστη εξυπηρέτηση</span>
+      <h1>Τεχνικές λύσεις για νερό, θέρμανση και ψύξη.</h1>
+      <h2>Θωμάς Νικολόπουλος</h2>
+      <p>Επαγγελματικές εργασίες σε κατοικίες και επαγγελματικούς χώρους, με συνέπεια, καθαρή δουλειά και σωστή τεχνική αντιμετώπιση κάθε βλάβης ή εγκατάστασης.</p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="tel:+306986616992">📞 6986616992</a>
+        <a class="btn btn-secondary" href="#services">Δείτε υπηρεσίες</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>3</strong>
+          <span>βασικοί τεχνικοί τομείς</span>
+        </div>
+        <div class="stat">
+          <strong>Άμεσα</strong>
+          <span>ραντεβού & εξυπηρέτηση</span>
+        </div>
+        <div class="stat">
+          <strong>3</strong>
+          <span>περιοχές κάλυψης</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-title">
+      <div class="mini">Υπηρεσίες</div>
+      <h2>Ολοκληρωμένες τεχνικές εργασίες για τον χώρο σας</h2>
+      <p>Από μικρές επισκευές μέχρι εγκαταστάσεις και συντηρήσεις, η εργασία γίνεται με προσοχή, υπευθυνότητα και επαγγελματισμό.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon">💧</div>
+        <h3>Υδραυλικές εργασίες</h3>
+        <p>Επισκευές διαρροών, αλλαγές σε βρύσες, καζανάκια, σωληνώσεις, σιφώνια και γενικές υδραυλικές παρεμβάσεις.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔥</div>
+        <h3>Θερμουδραυλικά</h3>
+        <p>Εργασίες σε συστήματα θέρμανσης, σώματα καλοριφέρ, κυκλοφορητές, δίκτυα θέρμανσης και εγκαταστάσεις.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">❄️</div>
+        <h3>Ψυκτικές εργασίες</h3>
+        <p>Εγκατάσταση, έλεγχος και συντήρηση κλιματιστικών μονάδων για σωστή λειτουργία και καλύτερη απόδοση.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🛠️</div>
+        <h3>Βλάβες & συντηρήσεις</h3>
+        <p>Άμεση αντιμετώπιση τεχνικών προβλημάτων και προληπτική συντήρηση για σπίτια, καταστήματα και επαγγελματικούς χώρους.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-section" id="why">
+    <div class="section-title">
+      <div class="mini">Γιατί εμάς</div>
+      <h2>Σοβαρή δουλειά, καθαρό αποτέλεσμα, σωστή εξυπηρέτηση</h2>
+      <p>Η σωστή τεχνική εργασία δεν φαίνεται μόνο στην επισκευή, αλλά και στη συνέπεια, την καθαριότητα και την αξιοπιστία.</p>
+    </div>
+
+    <div class="premium-grid">
+      <div class="premium-box">
+        <span>⚡</span>
+        <h3>Γρήγορη ανταπόκριση</h3>
+        <p>Άμεση επικοινωνία και εξυπηρέτηση στις περιοχές κάλυψης.</p>
+      </div>
+
+      <div class="premium-box">
+        <span>✅</span>
+        <h3>Υπεύθυνη εργασία</h3>
+        <p>Κάθε εργασία γίνεται με προσοχή, συνέπεια και επαγγελματική λογική.</p>
+      </div>
+
+      <div class="premium-box">
+        <span>🏠</span>
+        <h3>Για σπίτια & επιχειρήσεις</h3>
+        <p>Εξυπηρέτηση σε οικιακούς και επαγγελματικούς χώρους.</p>
+      </div>
+
+      <div class="premium-box">
+        <span>🤝</span>
+        <h3>Σχέση εμπιστοσύνης</h3>
+        <p>Σωστή συνεννόηση, καθαρή δουλειά και τεχνική υποστήριξη.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="areas" id="areas">
+    <div class="section-title">
+      <div class="mini">Περιοχές</div>
+      <h2>Περιοχές εξυπηρέτησης</h2>
+      <p>Ο Θωμάς Νικολόπουλος εξυπηρετεί σε επιλεγμένες περιοχές της Κεντρικής Μακεδονίας.</p>
+      <div class="area-list">
+        <span>Αλεξάνδρεια</span>
+        <span>Θεσσαλονίκη</span>
+        <span>Βέροια</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="cta-content">
+      <h2>Χρειάζεστε τεχνικό για υδραυλικά, θέρμανση ή ψύξη;</h2>
+      <p>Καλέστε τώρα για άμεση επικοινωνία και εξυπηρέτηση σε Αλεξάνδρεια, Θεσσαλονίκη και Βέροια.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="tel:+306986616992">📞 Κλήση: 6986616992</a>
+        <a class="btn whatsapp" href="https://wa.me/306986616992" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Θωμάς Νικολόπουλος | Υδραυλικός - Θερμουδραυλικός - Ψυκτικός</p>
+  </footer>
+
+  <a class="floating-call" href="tel:+306986616992" aria-label="Καλέστε τώρα">📞</a>
+
+</body>
+</html>
